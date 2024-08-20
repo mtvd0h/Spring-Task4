@@ -35,7 +35,7 @@ public class UserDaoImp implements UserDao {
          car = (Car) sessionFactory.getCurrentSession().createQuery("from Car where model = :model and series = :series").setParameter("model", model).setParameter("series", series).getSingleResult();
       }
       catch (RuntimeException e) {
-         System.out.printf("Ошибка поиска");
+         System.out.println("Ошибка поиска");
       }
       return car.getUser();
    }
